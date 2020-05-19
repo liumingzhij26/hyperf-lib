@@ -4,19 +4,47 @@ declare(strict_types=1);
 
 namespace HyperfLib;
 
+use Hyperf\Contract\ConfigInterface;
+use Hyperf\Contract\StdoutLoggerInterface;
+use Hyperf\HttpServer\CoreMiddleware;
+use Hyperf\TfConfig\ConfigFactory;
+use HyperfLib\Contract\LockInterface;
+use HyperfLib\Contract\ResponseInterface;
+use HyperfLib\Library\Http\ServiceResponse;
+use HyperfLib\Library\Lock\RedisLockFactory;
+use HyperfLib\Library\Logger\StdoutLoggerFactory;
+use HyperfLib\Listener\DbQueryExecutedListener;
+use HyperfLib\Listener\ErrorHandleListener;
+use HyperfLib\Listener\RouterHandleListener;
+use HyperfLib\Listener\Server\WorkerErrorHandleListener;
+use HyperfLib\Listener\Server\WorkerExitHandleListener;
+use HyperfLib\Listener\Server\WorkerStopHandleListener;
+use HyperfLib\Listener\ValidatorHandleListener;
+use HyperfLib\Middleware\Core\ServiceMiddleware;
+
 class ConfigProvider
 {
     public function __invoke(): array
     {
         return [
             'dependencies' => [
-
+                ConfigInterface::class => ConfigFactory::class,
+                CoreMiddleware::class => ServiceMiddleware::class,
+                ResponseInterface::class => ServiceResponse::class,
+                StdoutLoggerInterface::class => StdoutLoggerFactory::class,
+                LockInterface::class => RedisLockFactory::class,
             ],
             'commands' => [
 
             ],
             'listeners' => [
-
+                ErrorHandleListener::class,
+                RouterHandleListener::class,
+                ValidatorHandleListener::class,
+                DbQueryExecutedListener::class,
+                WorkerStopHandleListener::class,
+                WorkerErrorHandleListener::class,
+                WorkerExitHandleListener::class,
             ],
             'annotations' => [
                 'scan' => [

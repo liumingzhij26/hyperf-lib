@@ -14,7 +14,6 @@
 namespace HyperfLib\Server\Security;
 
 use HyperfLib\Library\Logger\Logger;
-use Hyperf\Utils\ApplicationContext;
 use Hyperf\Utils\Context;
 
 class DbQuery

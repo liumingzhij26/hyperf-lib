@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Middleware\Auth;
+namespace HyperfLib\Middleware\Auth;
 
 use HyperfLib\Exception\ServiceException;
 use Psr\Container\ContainerInterface;
