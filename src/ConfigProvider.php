@@ -75,12 +75,6 @@ class ConfigProvider
                     'destination' => BASE_PATH . '/config/i18n/languages/en/validation.php',
                 ],
                 [
-                    'id' => 'BaseRequest',
-                    'description' => 'The message bag for validation.',
-                    'source' => __DIR__ . '/../publish/Request/BaseRequest.php',
-                    'destination' => BASE_PATH . '/app/Request/BaseRequest.php',
-                ],
-                [
                     'id' => 'ErrorCode',
                     'description' => 'The message bag for validation.',
                     'source' => __DIR__ . '/../publish/Constants/ErrorCode.php',
