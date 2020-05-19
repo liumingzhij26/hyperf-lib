@@ -12,9 +12,8 @@ declare(strict_types=1);
 
 namespace HyperfLib\Exception\Handler;
 
-use App\Constants\ErrorCode;
-use App\Constants\InfoCode;
-use App\Constants\ServerCode;
+use HyperfLib\Constants\InfoCode;
+use HyperfLib\Constants\ServerCode;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Psr\Http\Message\ResponseInterface;
