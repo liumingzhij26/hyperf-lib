@@ -53,10 +53,10 @@ class ConfigProvider
             ],
             'publish' => [
                 [
-                    'id' => 'ErrorCode',
+                    'id' => 'ServerCode',
                     'description' => 'The message bag for validation.',
-                    'source' => __DIR__ . '/../publish/Constants/ErrorCode.php',
-                    'destination' => BASE_PATH . '/app/Constants/ErrorCode.php',
+                    'source' => __DIR__ . '/../publish/Constants/ServerCode.php',
+                    'destination' => BASE_PATH . '/app/Constants/ServerCode.php',
                 ],
                 [
                     'id' => 'InfoCode',
