@@ -11,8 +11,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf-cloud/hyperf/blob/master/LICENSE
  */
 
-use App\Constants\ErrorCode;
-use App\Constants\ServerCode;
+use HyperfLib\Constants\ServerCode;
 use HyperfLib\Exception\ServiceException;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\DbConnection\Db;

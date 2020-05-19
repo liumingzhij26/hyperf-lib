@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace HyperfLib\Middleware\Core;
 
-use App\Constants\ErrorCode;
-use App\Constants\ServerCode;
+use HyperfLib\Constants\ServerCode;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpMessage\Cookie\Cookie;

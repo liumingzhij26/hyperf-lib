@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace HyperfLib\Library\Http;
 
-use App\Constants\InfoCode;
+use HyperfLib\Constants\InfoCode;
 use HyperfLib\Contract\ResponseInterface;
 use HyperfLib\Exception\ServiceException;
 use Hyperf\Utils\Context;

@@ -12,9 +12,8 @@ declare(strict_types=1);
 
 namespace HyperfLib\Exception;
 
-use App\Constants\ErrorCode;
-use App\Constants\InfoCode;
-use App\Constants\ServerCode;
+use HyperfLib\Constants\InfoCode;
+use HyperfLib\Constants\ServerCode;
 use Throwable;
 
 class EmptyException extends ServiceException

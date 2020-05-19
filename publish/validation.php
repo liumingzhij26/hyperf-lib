@@ -23,10 +23,5 @@ return [
         BaseRequest::class,
     ],
 
-    'extend' => [
-        Post::class,
-        Get::class,
-        Str::class,
-        Mobile::class,
-    ],
+
 ];

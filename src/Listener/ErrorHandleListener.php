@@ -12,12 +12,12 @@ declare(strict_types=1);
 
 namespace HyperfLib\Listener;
 
-use App\Constants\ErrorCode;
 use ErrorException;
 use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Framework\Event\BootApplication;
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Hyperf\Utils\Coroutine;
+use HyperfLib\Constants\ServerCode;
 use HyperfLib\Library\Logger\Logger;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
@@ -88,7 +88,7 @@ class ErrorHandleListener implements ListenerInterface
                         'cid' => Coroutine::id(),
                         'c_pid' => Coroutine::parentId(),
                     ];
-                    $response->withStatus(ErrorCode::SERVER_ERROR)->withBody(new SwooleStream($error['message']))->send(true);
+                    $response->withStatus(ServerCode::SERVER_ERROR)->withBody(new SwooleStream($error['message']))->send(true);
                     break;
             }
         });

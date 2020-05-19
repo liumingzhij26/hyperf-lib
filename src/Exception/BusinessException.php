@@ -12,8 +12,8 @@ declare(strict_types=1);
 
 namespace HyperfLib\Exception;
 
-use App\Constants\InfoCode;
-use App\Constants\ServerCode;
+use HyperfLib\Constants\InfoCode;
+use HyperfLib\Constants\ServerCode;
 use Throwable;
 
 /**

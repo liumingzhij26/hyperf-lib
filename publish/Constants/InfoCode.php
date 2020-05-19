@@ -10,25 +10,7 @@ use Hyperf\Constants\Annotation\Constants;
  * @Constants
  * @method static getMessage($code, $data)
  */
-class InfoCode extends ErrorCode
+class InfoCode extends \HyperfLib\Constants\InfoCode
 {
-    /**
-     * @Message("message.rate_limit_error")
-     */
-    const CODE_RATE_LIMIT = 50003;
 
-    /**
-     * @Message("server error")
-     */
-    const CODE_ERROR = 40001;
-
-    /**
-     * @Message("message.error_null")
-     */
-    const CODE_ERROR_NULL = 400400;
-
-    /**
-     * @Message("message.user_registered_error")
-     */
-    const USER_REG_ERROR = 100001;
 }

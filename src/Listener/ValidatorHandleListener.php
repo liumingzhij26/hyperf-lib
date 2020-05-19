@@ -10,6 +10,10 @@ use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Request;
 use Hyperf\Utils\Collection;
 use Hyperf\Validation\Event\ValidatorFactoryResolved;
+use HyperfLib\Library\Validator\Get;
+use HyperfLib\Library\Validator\Mobile;
+use HyperfLib\Library\Validator\Post;
+use HyperfLib\Library\Validator\Str;
 use Psr\Container\ContainerInterface;
 
 class ValidatorHandleListener implements ListenerInterface
@@ -28,13 +32,19 @@ class ValidatorHandleListener implements ListenerInterface
     /**
      * @var array
      */
-    private $config;
+    private $config = [
+        'extend' => [
+            Post::class,
+            Get::class,
+            Str::class,
+            Mobile::class,
+        ],
+    ];
 
     public function __construct(ContainerInterface $container, RequestInterface $request)
     {
         $this->container = $container;
         $this->request = $request;
-        $this->config = $container->get(ConfigInterface::class)->get('validation.extend');
     }
 
     public function listen(): array
@@ -49,8 +59,7 @@ class ValidatorHandleListener implements ListenerInterface
         if ($event instanceof ValidatorFactoryResolved) {
             $validatorFactory = $event->validatorFactory;
             // 注册了 自定义验证器
-            $arrList = new Collection($this->config);
-            foreach ($arrList as $className) {
+            foreach ($this->config['extend'] as $className) {
                 $class = make($className);
                 $status = $class instanceof ValidatorExtendInterface &&
                     method_exists($class, 'extend') &&

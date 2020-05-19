@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace HyperfLib\Contract;
 
-use App\Constants\InfoCode;
+use HyperfLib\Constants\InfoCode;
 
 interface ResponseInterface
 {

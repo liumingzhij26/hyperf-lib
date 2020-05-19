@@ -3,8 +3,7 @@ declare(strict_types=1);
 
 namespace HyperfLib\Exception\Handler\Rpc;
 
-use App\Constants\ErrorCode;
-use App\Constants\ServerCode;
+use HyperfLib\Constants\ServerCode;
 use HyperfLib\Exception\BusinessException;
 use HyperfLib\Exception\EmptyException;
 use HyperfLib\Exception\Handler\ExceptionHandler;

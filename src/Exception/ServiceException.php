@@ -12,9 +12,8 @@ declare(strict_types=1);
 
 namespace HyperfLib\Exception;
 
-use App\Constants\ErrorCode;
-use App\Constants\InfoCode;
-use App\Constants\ServerCode;
+use HyperfLib\Constants\InfoCode;
+use HyperfLib\Constants\ServerCode;
 use Hyperf\Server\Exception\ServerException;
 use Hyperf\Utils\Context;
 use Throwable;
