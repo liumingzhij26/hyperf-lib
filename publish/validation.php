@@ -11,17 +11,13 @@
  *
  **/
 
-use App\Library\Validator\Get;
-use App\Library\Validator\Mobile;
-use App\Library\Validator\Post;
-use App\Library\Validator\Str;
-use App\Request\BaseRequest;
+
+use HyperfLib\Request\BaseRequest;
 
 return [
 
     'request' => [
         BaseRequest::class,
     ],
-
 
 ];
