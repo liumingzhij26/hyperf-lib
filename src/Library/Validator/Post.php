@@ -13,7 +13,7 @@
 
 namespace HyperfLib\Library\Validator;
 
-use App\Contract\ValidatorExtendInterface;
+use HyperfLib\Contract\ValidatorExtendInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Request;
 

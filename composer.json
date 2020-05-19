@@ -79,6 +79,14 @@
             "src/Library/Utils/Utility.php"
         ]
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1-dev"
+        },
+        "hyperf": {
+            "config": "HyperfLib\\ConfigProvider"
+        }
+    },
     "scripts": {
         "cs-fix": "php-cs-fixer fix $1"
     }
