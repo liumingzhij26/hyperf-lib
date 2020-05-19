@@ -1,0 +1,46 @@
+{
+    "name": "lmz/hyperf-lib",
+    "type": "library",
+    "description": "The PHP library for TheFair",
+    "keywords": [
+        "thefair"
+    ],
+    "homepage": "https://github.com/thefair-net/thefairlib",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zhang Han",
+            "email": "zhanghan@thefair.net.cn"
+        },
+        {
+            "name": "Liu mingzhi",
+            "email": "liumingzhi@thefair.net.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "ext-swoole": ">=4.4",
+        "ext-redis": "*",
+        "yurunsoft/phpmailer-swoole": "~1.0"
+    },
+    "require-dev": {
+        "eaglewu/swoole-ide-helper": "dev-master",
+        "phpunit/phpunit": "^7.0.0",
+        "friendsofphp/php-cs-fixer": "^2.9",
+        "vlucas/phpdotenv": "^3.1",
+        "ext-pdo": "*",
+        "ext-redis": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "HyperfLib\\": "src/"
+        },
+        "files": [
+            "src/Library/Utils/Utility.php"
+        ]
+    },
+    "scripts": {
+        "cs-fix": "php-cs-fixer fix $1"
+    }
+}
