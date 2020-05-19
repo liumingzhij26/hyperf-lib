@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace HyperfLib\Middleware\Core;
 
 use App\Constants\ErrorCode;
+use App\Constants\ServerCode;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpMessage\Cookie\Cookie;
@@ -50,7 +51,7 @@ class ServiceMiddleware extends \Hyperf\HttpServer\CoreMiddleware
     {
         // 重写路由找不到的处理逻辑
         $result = $this->serviceResponse->showError('Not Found');
-        return $this->response()->withStatus(ErrorCode::HTTP_NOT_FOUND)
+        return $this->response()->withStatus(ServerCode::HTTP_NOT_FOUND)
             ->withAddedHeader('content-type', 'application/json; charset=utf-8')
             ->withBody(new SwooleStream(encode($result)));
     }

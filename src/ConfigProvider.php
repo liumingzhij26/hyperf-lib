@@ -6,6 +6,7 @@ namespace HyperfLib;
 
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Contract\StdoutLoggerInterface;
+use Hyperf\Devtool\VendorPublishCommand;
 use Hyperf\HttpServer\CoreMiddleware;
 use Hyperf\TfConfig\ConfigFactory;
 use HyperfLib\Contract\LockInterface;
@@ -33,9 +34,6 @@ class ConfigProvider
                 ResponseInterface::class => ServiceResponse::class,
                 StdoutLoggerInterface::class => StdoutLoggerFactory::class,
                 LockInterface::class => RedisLockFactory::class,
-            ],
-            'commands' => [
-
             ],
             'listeners' => [
                 ErrorHandleListener::class,

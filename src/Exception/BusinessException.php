@@ -12,8 +12,8 @@ declare(strict_types=1);
 
 namespace HyperfLib\Exception;
 
-use App\Constants\ErrorCode;
 use App\Constants\InfoCode;
+use App\Constants\ServerCode;
 use Throwable;
 
 /**
@@ -24,7 +24,7 @@ use Throwable;
  */
 class BusinessException extends ServiceException
 {
-    public function __construct(int $code, array $replace = [], array $data = [], Throwable $previous = null, int $httpStatus = ErrorCode::BAD_REQUEST)
+    public function __construct(int $code, array $replace = [], array $data = [], Throwable $previous = null, int $httpStatus = ServerCode::BAD_REQUEST)
     {
         $message = InfoCode::getMessage($code, $replace);
 

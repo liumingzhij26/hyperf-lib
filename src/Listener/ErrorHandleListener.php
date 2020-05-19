@@ -45,7 +45,7 @@ class ErrorHandleListener implements ListenerInterface
                 'args' => $_SERVER['argv'],
             ];
             if (!preg_match('/cli_set_process_title/', $message)) {
-                Logger::get()->debug("mac: ", $message);
+                Logger::get()->debug("mac: ". $message);
             }
             if (error_reporting() & $level) {
                 throw new ErrorException($message, 0, $level, $file, $line);
@@ -60,6 +60,8 @@ class ErrorHandleListener implements ListenerInterface
                 'string' => $e->getTraceAsString(),
                 'args' => $_SERVER['argv'],
             ];
+            rd_debug([$errors, __CLASS__, posix_getpid()]);
+
             Logger::get()->error(implode(" | ", $errors));
             throw $e;
         });

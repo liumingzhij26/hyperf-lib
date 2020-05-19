@@ -14,6 +14,7 @@ namespace HyperfLib\Exception;
 
 use App\Constants\ErrorCode;
 use App\Constants\InfoCode;
+use App\Constants\ServerCode;
 use Hyperf\Server\Exception\ServerException;
 use Hyperf\Utils\Context;
 use Throwable;
@@ -27,7 +28,7 @@ use Throwable;
  */
 class ServiceException extends ServerException
 {
-    public function __construct(string $message, array $data = [], int $code = InfoCode::CODE_ERROR, Throwable $previous = null, int $httpStatus = ErrorCode::BAD_REQUEST)
+    public function __construct(string $message, array $data = [], int $code = InfoCode::CODE_ERROR, Throwable $previous = null, int $httpStatus = ServerCode::BAD_REQUEST)
     {
         $this->data = $data;
         $this->httpStatus = $httpStatus;

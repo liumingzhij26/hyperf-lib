@@ -12,6 +12,7 @@ declare(strict_types=1);
  */
 
 use App\Constants\ErrorCode;
+use App\Constants\ServerCode;
 use HyperfLib\Exception\ServiceException;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\DbConnection\Db;
@@ -164,7 +165,7 @@ if (!function_exists('getUuid')) {
         if (!empty($uuid->uuid)) {
             return intval(substr("{$uuid->uuid}", -19));
         }
-        throw new ServiceException('uuid error', [], ErrorCode::SERVER_CODE_ERROR);
+        throw new ServiceException('uuid error', [], ServerCode::SERVER_CODE_ERROR);
     }
 }
 

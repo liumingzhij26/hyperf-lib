@@ -14,6 +14,7 @@ namespace HyperfLib\Exception\Handler\Rpc;
 
 use App\Constants\ErrorCode;
 use App\Constants\InfoCode;
+use App\Constants\ServerCode;
 use HyperfLib\Exception\Handler\ExceptionHandler;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\HttpMessage\Stream\SwooleStream;
@@ -43,7 +44,7 @@ class RpcAppExceptionHandler extends ExceptionHandler
         $this->logger->error($throwable->getTraceAsString());
         $result = $this->serviceResponse->showError($throwable->getMessage(), ['data' => $response->getBody(), 'exception' => get_class($throwable), $throwable->getTraceAsString()], $throwable->getCode() > 0 ? $throwable->getCode() : InfoCode::CODE_ERROR);
 
-        return $response->withStatus(ErrorCode::OK)
+        return $response->withStatus(ServerCode::OK)
             ->withAddedHeader('content-type', 'application/json')
             ->withAddedHeader('charset', 'utf-8');
     }

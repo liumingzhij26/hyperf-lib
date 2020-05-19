@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace HyperfLib\Exception\Handler\Rpc;
 
 use App\Constants\ErrorCode;
+use App\Constants\ServerCode;
 use HyperfLib\Exception\BusinessException;
 use HyperfLib\Exception\EmptyException;
 use HyperfLib\Exception\Handler\ExceptionHandler;
@@ -30,7 +31,7 @@ class RpcServiceExceptionHandler extends ExceptionHandler
         $data = $throwable->getData();
 
         $result = $this->serviceResponse->showError($throwable->getMessage(), array_merge($data, ['exception' => get_class($throwable)]), $throwable->getCode());
-        return $response->withStatus(ErrorCode::OK);
+        return $response->withStatus(ServerCode::OK);
     }
 
     public function isValid(Throwable $throwable): bool

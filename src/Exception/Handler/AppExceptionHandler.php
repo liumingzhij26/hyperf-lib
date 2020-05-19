@@ -14,6 +14,7 @@ namespace HyperfLib\Exception\Handler;
 
 use App\Constants\ErrorCode;
 use App\Constants\InfoCode;
+use App\Constants\ServerCode;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Psr\Http\Message\ResponseInterface;
@@ -53,7 +54,7 @@ class AppExceptionHandler extends ExceptionHandler
             ['data' => $response->getBody(), 'exception' => get_class($throwable)],
             $throwable->getCode() > 0 ? $throwable->getCode() : InfoCode::CODE_ERROR
         );
-        return $response->withStatus($throwable->getHttpStatus ?? ErrorCode::BAD_REQUEST)
+        return $response->withStatus($throwable->getHttpStatus ?? ServerCode::BAD_REQUEST)
             ->withAddedHeader('content-type', 'application/json')
             ->withAddedHeader('charset', 'utf-8')
             ->withBody(new SwooleStream(encode($result)));

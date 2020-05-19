@@ -14,11 +14,12 @@ namespace HyperfLib\Exception;
 
 use App\Constants\ErrorCode;
 use App\Constants\InfoCode;
+use App\Constants\ServerCode;
 use Throwable;
 
 class EmptyException extends ServiceException
 {
-    public function __construct(string $message = '数据不存在！', array $data = [], int $code = InfoCode::CODE_ERROR, Throwable $previous = null, int $httpStatus = ErrorCode::BAD_REQUEST)
+    public function __construct(string $message = '数据不存在！', array $data = [], int $code = InfoCode::CODE_ERROR, Throwable $previous = null, int $httpStatus = ServerCode::BAD_REQUEST)
     {
         parent::__construct($message, $data, $code, $previous, $httpStatus);
     }
