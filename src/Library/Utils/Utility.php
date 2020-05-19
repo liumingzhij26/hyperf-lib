@@ -16,7 +16,6 @@ use HyperfLib\Exception\ServiceException;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\DbConnection\Db;
 use Hyperf\HttpServer\Contract\RequestInterface;
-use Hyperf\Redis\RedisFactory;
 use Hyperf\Snowflake\IdGenerator\SnowflakeIdGenerator;
 use Hyperf\Snowflake\IdGeneratorInterface;
 use Hyperf\Snowflake\Meta;
