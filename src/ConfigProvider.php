@@ -114,9 +114,15 @@ class ConfigProvider
                 ],
                 [
                     'id' => 'env',
-                    'description' => 'The message bag for validation.',
+                    'description' => 'The message bag for env.',
                     'source' => __DIR__ . '/../publish/.env.example',
                     'destination' => BASE_PATH . '/.env.example',
+                ],
+                [
+                    'id' => 'watch',
+                    'description' => 'The message bag for watch.',
+                    'source' => __DIR__ . '/../publish/bin/watch.php',
+                    'destination' => BASE_PATH . '/watch.php',
                 ],
             ],
         ];
