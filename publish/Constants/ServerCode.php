@@ -21,7 +21,4 @@ use Hyperf\Constants\Annotation\Constants;
  */
 class ServerCode extends \HyperfLib\Constants\ServerCode
 {
-
-
-
 }

@@ -31,7 +31,8 @@ class WorkerStopHandleListener implements ListenerInterface
     public function process(object $event)
     {
         if ($event instanceof OnWorkerStop) {
-            Logger::get()->info(sprintf('event: %s , server: %s, worker_id: %d',
+            Logger::get()->info(sprintf(
+                'event: %s , server: %s, worker_id: %d',
                 OnWorkerStop::class,
                 $event->server,
                 $event->workerId

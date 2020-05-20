@@ -16,7 +16,6 @@ use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Framework\Event\OnWorkerExit;
 use HyperfLib\Library\Logger\Logger;
 
-
 class WorkerExitHandleListener implements ListenerInterface
 {
     /**
@@ -32,7 +31,8 @@ class WorkerExitHandleListener implements ListenerInterface
     public function process(object $event)
     {
         if ($event instanceof OnWorkerExit) {
-            Logger::get()->info(sprintf('event: %s , server: %s, worker_id: %d',
+            Logger::get()->info(sprintf(
+                'event: %s , server: %s, worker_id: %d',
                 OnWorkerExit::class,
                 $event->server,
                 $event->workerId

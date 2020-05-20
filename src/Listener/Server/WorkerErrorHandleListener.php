@@ -31,7 +31,8 @@ class WorkerErrorHandleListener implements ListenerInterface
     public function process(object $event)
     {
         if ($event instanceof OnWorkerError) {
-            Logger::get()->info(sprintf('event: %s , server: %s, worker_id: %d',
+            Logger::get()->info(sprintf(
+                'event: %s , server: %s, worker_id: %d',
                 OnWorkerError::class,
                 $event->server,
                 $event->workerId

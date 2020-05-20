@@ -12,5 +12,4 @@ use Hyperf\Constants\Annotation\Constants;
  */
 class InfoCode extends \HyperfLib\Constants\InfoCode
 {
-
 }

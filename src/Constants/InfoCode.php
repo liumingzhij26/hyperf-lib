@@ -31,5 +31,4 @@ class InfoCode extends ErrorCode
      * @Message("server error")
      */
     const SERVER_CODE_ERROR = 50000;
-
 }
